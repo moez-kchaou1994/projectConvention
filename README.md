@@ -15,8 +15,9 @@ A convention is described by:
 4. The date of its signature by each participant
 5. Its purpose
 6. The date of its entry into force
-7. The date of its expiry
-Persistence will be ensured in a MySql database called GestConv
+7. The date of its expiry.
+
+-Persistence will be ensured in a MySql database called GestConv
 You are asked to implement the IPSAS convention management application (GestConv) according to the MVC design pattern in accordance with the JEE platform.
 Notice:
 We give you the choice, justifying it in your conceptual modeling report, the client technology.
