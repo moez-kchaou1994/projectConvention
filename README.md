@@ -20,13 +20,11 @@ A convention is described by:
 -Persistence will be ensured in a MySql database called GestConv
 You are asked to implement the IPSAS convention management application (GestConv) according to the MVC design pattern in accordance with the JEE platform.
 # Devops
-* Jenkins Installer
-* Start Jenkins
 * for Jenkins setup:
 1. GIT path configuration: the git path is /usr/lib/git-core/git
 2. Maven configuration: install automatically
 3. configuration of the JDK: either give the path or leave it to automatically install java
-
+*Docker setup
 * Step 1 :
 * Create and test a script that retrieves project code and builds from the git repository using maven:
 * Step 2:
