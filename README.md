@@ -20,45 +20,24 @@ A convention is described by:
 -Persistence will be ensured in a MySql database called GestConv
 You are asked to implement the IPSAS convention management application (GestConv) according to the MVC design pattern in accordance with the JEE platform.
 # Devops
-Jenkins Installer
-Start Jenkins
-for Jenkins setup:
-1- GIT path configuration: the git path is /usr/lib/git-core/git
-2- Maven configuration: install automatically
-3- configuration of the JDK: either give the path or leave it to automatically install java
-Step 1 :
-Create and test a script that retrieves project code and builds from the git repository
-using maven:
-pipeline {
-agent any
-tools{
-maven 'Maven'
-}
-stages {
-stage ('Initialize') {
-steps {
-git 'https://….git'
-}
-}
-stage ('Maven Build') {
-steps {
-sh 'mvn clean package'
-}
-}
-}
-}
-Step 2:
-add a function that calls a shell script in the pipeline: this function has the role of
-retrieve the build version number.
-def getVersion(){
-}
-Step 3:
-Add the script that allows the launch of docker image:
-The name of the image must have the following structure:
-github_user_name/tag:version
-Step 4:
-Add a stage for the deployment (Push) of the docker image on dockerhub.
-pipeline {
+* Jenkins Installer
+* Start Jenkins
+* for Jenkins setup:
+1. GIT path configuration: the git path is /usr/lib/git-core/git
+2. Maven configuration: install automatically
+3. configuration of the JDK: either give the path or leave it to automatically install java
+1. Step 1 :
+* Create and test a script that retrieves project code and builds from the git repository using maven:
+2. Step 2:
+* add a function that calls a shell script in the pipeline: this function has the role of retrieve the build version number.
+* def getVersion(){ }
+3. Step 3:
+* Add the script that allows the launch of docker image:
+* The name of the image must have the following structure:
+* github_user_name/tag:version
+4. Step 4:
+* Add a stage for the deployment (Push) of the docker image on dockerhub.
+ pipeline {
 agent any
 tools{
 maven 'Maven'
