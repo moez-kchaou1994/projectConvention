@@ -1,0 +1,41 @@
+pipeline {
+agent any
+tools{
+maven 'Maven'
+}
+environment{
+    DOCKER_TAG = getVersion()
+    default_container_name = "convention"
+    default_container_image = "moezdocker/convention"
+}
+stages {
+stage ('Initialize') {
+steps {
+git branch: 'main', url: 'https://github.com/moez1994/projectConvention.git'
+}
+}
+stage ('Maven Build') {
+steps {
+sh 'mvn clean package'
+}
+}
+stage ('Docker Build') {
+            steps {
+                sh 'docker build -t moezdocker/convention:${DOCKER_TAG}.'
+            }
+        }
+        stage ('DockerHub Push') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'password', usernameVariable: 'username')])  {
+                    sh 'docker login -u ${username} -p ${password} '
+                }
+               
+                sh 'docker push moezdocker/convention:${DOCKER_TAG}'
+            }
+        }
+}
+}
+def getVersion(){
+def version = sh returnStdout: true,script: 'git rev-parse --short HEAD'
+return version
+}
