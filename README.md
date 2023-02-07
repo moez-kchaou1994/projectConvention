@@ -27,14 +27,14 @@ You are asked to implement the IPSAS convention management application (GestConv
 2. Maven configuration: install automatically
 3. configuration of the JDK: either give the path or leave it to automatically install java
 
-1. Step 1 :
+* Step 1 :
 * Create and test a script that retrieves project code and builds from the git repository using maven:
-2. Step 2:
+* Step 2:
 * add a function that calls a shell script in the pipeline: this function has the role of retrieve the build version number.
 * def getVersion(){ }
-3. Step 3:
+* Step 3:
 * Add the script that allows the launch of docker image:
 * The name of the image must have the following structure:
 * github_user_name/tag:version
-4. Step 4:
+* Step 4:
 * Add a stage for the deployment (Push) of the docker image on dockerhub.
