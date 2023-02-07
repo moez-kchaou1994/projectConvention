@@ -26,6 +26,7 @@ You are asked to implement the IPSAS convention management application (GestConv
 1. GIT path configuration: the git path is /usr/lib/git-core/git
 2. Maven configuration: install automatically
 3. configuration of the JDK: either give the path or leave it to automatically install java
+
 1. Step 1 :
 * Create and test a script that retrieves project code and builds from the git repository using maven:
 2. Step 2:
